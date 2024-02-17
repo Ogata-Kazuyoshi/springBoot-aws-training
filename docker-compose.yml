@@ -1,0 +1,15 @@
+services:
+  memo-app-db:
+    image: postgres:15.3
+    container_name: memo-app-db
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: memo_app_ogata
+    volumes:
+      - memo-app-db:/var/lib/postgresql
+
+volumes:
+  memo-app-db:
